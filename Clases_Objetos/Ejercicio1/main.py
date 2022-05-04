@@ -1,16 +1,38 @@
 
-class Vehiculo:
-    color = "Negro"
-    ruedas = 6
-    puertas = 5
+class Vehiculo():
+    _color = None
+    _ruedas = None
+    _puertas = None
+
+    def darColor(self, color):
+        self._color = color
+    
+    def darRuedas(self, ruedas):
+        self._ruedas = ruedas
+    
+    def darPuertas(self, puertas):
+        self._puertas = puertas
 
 class Coche(Vehiculo):
-    velocidad = 963
-    cilindrada = 369
+    _velocidad = None
+    _cilindrada = None
+
+    def darVelocidad(self, velocidad):
+        self._velocidad = velocidad
+    
+    def darCilindrada(self, cilindrada):
+        self._cilindrada = cilindrada
+
 
 miCoche = Coche()
-print("mi coche es de color: ", miCoche.color)
-print("mi coche tiene ", miCoche.ruedas,"ruedas")
-print("mi coche tiene", miCoche.puertas,"puertas")
-print("mi coche tiene una velocidad de:", miCoche.velocidad)
-print("mi coche tiene una cilindrada de:", miCoche.cilindrada)
+miCoche.darColor("Negro")
+miCoche.darRuedas(6)
+miCoche.darPuertas(5)
+miCoche.darVelocidad(369)
+miCoche.darCilindrada(5200)
+
+print("mi coche tiene las siguientes caracteristicas: ", "color:", miCoche._color, 
+"ruedas:",miCoche._ruedas, 
+"puertas:",miCoche._puertas, 
+"velocidad",miCoche._velocidad, 
+"cilindrada",miCoche._cilindrada)
